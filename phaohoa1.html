@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Tạo hiệu ứng bắn pháo hoa bằng HTML5 và Javascript</title>
+<link rel="icon" href="https://anonyviet.com/resource/phaohoa2/favicon.ico" type="image/x-ico"/>
+
+<link href="style.css" rel="stylesheet" />
+
+</head>
+<body>
+	<audio src="C:\Users\Khanh\Desktop\tin12/explosion.mp3" ></audio>
+	<audio id="my-audio" src="C:\Users\Khanh\Desktop\tin12/explosion.mp3"></audio>
+
+    <script>
+        // Lấy phần tử audio
+        const audioElement = document.getElementById('my-audio');
+
+        // Thêm sự kiện click vào trang web
+        document.addEventListener('click', function () {
+            audioElement.play();
+        }, { once: true }); // Chỉ phát âm thanh một lần khi nhấp vào
+    </script>
+
+
+<canvas id="canvas">Canvas không hổ trợ trình duyệt của bạn.</canvas>
+<script type="text/javascript" src="script.js"> </script>
+</body>
+</html>

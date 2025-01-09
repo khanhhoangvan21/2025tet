@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đếm ngược đến Tết Nguyên Đán - Chúc Mừng Năm Mới!</title> 
+  <link rel="shortcut icon" href="images/icon.png" />
+  <meta name="description" content="Trang web đếm ngược đến Tết Nguyên Đán. Theo dõi thời gian còn lại đến năm mới với giao diện đẹp mắt và dễ sử dụng. Chúc mừng năm mới!">
+  <meta name="keywords" content="đếm ngược tết, tết nguyên đán, năm mới, đồng hồ đếm ngược, chúc mừng năm mới, tết việt nam">
+  <meta name="author" content="Tungnv">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Đếm ngược đến Tết Nguyên Đán - Chúc Mừng Năm Mới!">
+  <meta property="og:description" content="Trang web đếm ngược đến Tết Nguyên Đán với giao diện thân thiện, dễ sử dụng. Theo dõi từng giây để chào đón năm mới!">
+  <meta property="og:image" content="images/tet.jpg"> 
+  <meta property="og:url" content="images/tet.jpg"> 
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Đếm ngược đến Tết Nguyên Đán - Chúc Mừng Năm Mới!">
+  <meta name="twitter:description" content="Theo dõi thời gian còn lại đến năm mới với đồng hồ đếm ngược cực đẹp.">
+  <meta name="twitter:image" content="images/tet.jpg"> 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: none;
+      color: #333;
+    }
+    h1 {
+      color: #FF8C00;
+      margin-top: 30px;
+    }
+    #countdown {
+      font-size: 3em;
+      margin: 20px 0;
+    }
+    .time-box {
+      display: inline-block;
+      margin: 10px;
+      padding: 20px;
+      background: #ffbe76;
+      border-radius: 10px;
+      color: #fff;
+    }
+    .time-box span {
+      display: block;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Đếm ngược đến Tết Nguyên Đán</h1> 
+  <h1>Cùng tìm hiểu nhiều điều thú vị!</h1>
+  <div id="countdown">
+    <div class="time-box">
+      <span id="days">0</span>
+      Ngày
+    </div>
+    <div class="time-box">
+      <span id="hours">0</span>
+      Giờ
+    </div>
+    <div class="time-box">
+      <span id="minutes">0</span>
+      Phút
+    </div>
+    <div class="time-box">
+      <span id="seconds">0</span>
+      Giây
+    </div>
+  </div>
+  <script>
+    // Ngày giờ Tết Nguyên Đán (điều chỉnh năm nếu cần)
+    const tetDate = new Date("2025-01-29T00:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const timeDiff = tetDate - now;
+
+      if (timeDiff > 0) {
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+      } else {
+        document.getElementById("countdown").innerHTML = "<h2>Chúc Mừng Năm Mới!</h2>";
+      }
+    }
+
+    // Cập nhật đếm ngược mỗi giây
+    setInterval(updateCountdown, 1000);
+  </script>
+  <video id="fullscreen-video" controls width="60%" height="60%">
+    <source src="C:\Users\Khanh\Desktop\tin12/video.mp4" type="video/mp4" >
+    
+</video>
+</body>
+</html>

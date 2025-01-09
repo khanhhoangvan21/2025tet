@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="C:\Users\Khanh\Desktop\tin12/logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết</title>
+    
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            height: 100%;  /* Chiếm toàn bộ chiều cao của cửa sổ trình duyệt */
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Đảm bảo không có thanh cuộn khi pháo hoa hoạt động */
+
+            
+            
+
+            
+        }
+
+
+        .header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 98%;
+            height: 50px;
+            background-color: #CC3300;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 20px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .header a:hover {
+            background-color: #990000;
+            transform: scale(1.1);
+        }
+
+        .auth a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .auth a:hover {
+            background-color: #990000;
+            transform: scale(1.1);
+        }
+        
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 230px;
+            height: 140px;
+        }
+
+        .content {
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        iframe {
+            width: 80%;
+            height: 78vh;
+            border: none;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0.5, 0, 0, 0.5);
+            z-index: 1001;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal input {
+            display: block;
+            width: 90%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #555;
+        }
+
+        
+        /* Add background video */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .background-video video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* Đẩy footer xuống dưới */
+    padding: 20px;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #CC3300;
+    color: white;
+
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+/* Màu mặc định cho liên kết */
+a {
+    color: yellow;
+}
+
+    </style>
+     <style>
+        /* Video sẽ chiếm toàn bộ màn hình */
+        #fullscreen-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            object-fit: cover; /* Đảm bảo video không bị méo */
+        }
+    </style>
+
+
+    
+
+</head>
+<body  background="C:\Users\Khanh\Desktop\tin12/anh1.jpg" >
+
+   <!-- Video full màn hình -->
+<video id="fullscreen-video" controls>
+    <source src="C:\Users\Khanh\Desktop\tin12/video.mp4" type="video/mp4">
+    
+</video>
+<script>
+    // Lấy phần tử video
+    const video = document.getElementById('fullscreen-video');
+
+    // Lắng nghe sự kiện click vào bất kỳ đâu trên document
+    document.addEventListener('click', function(event) {
+        // Kiểm tra nếu click không nằm trong video
+        if (!video.contains(event.target)) {
+            // Ẩn video khi click ra ngoài
+            video.style.display = 'none';
+        }
+    });
+
+    
+</script>
+
+
+
+
+
+
+    <div class="header">
+        <div class="logo">
+            <img src="C:\Users\Khanh\Desktop\tin12/logo.jpg" alt="Logo">
+        </div>
+        <div>
+            <a href="#" onclick="loadPage('home.html')">TRANG CHỦ</a>
+            <a href="#" onclick="loadPage('page1.html')">NGUỒN GỐC</a>
+            <a href="#" onclick="loadPage('page2.html')">PHONG TỤC</a>
+            <a href="#" onclick="loadPage('page3.html')">CÁC GIAI ĐOẠN</a>
+            <a href="#" onclick="loadPage('phaohoa1.html')">NGẮM PHÁO HOA</a>
+        </div>
+        <div class="auth">
+            <a href="#" onclick="showModal('login-modal')">Log In</a>
+            <a href="#" onclick="showModal('signup-modal')">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <iframe id="web-frame" src="" onload="stopSound()"></iframe>
+    </div>
+
+    <!-- Lớp phủ mờ nền -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeAllModals()"></div>
+
+    <div id="login-modal" class="modal">
+        <h2>Log In</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button onclick="closeModal('login-modal')">Log In</button>
+    </div>
+
+    <div id="signup-modal" class="modal">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+        <button onclick="closeModal('signup-modal')">Sign Up</button>
+    </div>
+
+    <script>
+        // Function to handle modal opening
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.getElementById('modal-overlay').classList.add('active');
+        }
+
+        // Function to close all modals
+        function closeAllModals() {
+            document.querySelectorAll('.modal').forEach(modal => modal.classList.remove('active'));
+            document.getElementById('modal-overlay').classList.remove('active');
+        }
+
+        // Function to close a specific modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.getElementById('modal-overlay').classList.remove('active');
+        }
+
+        // Function to load iframe content
+        function loadPage(url) {
+            document.getElementById('web-frame').src = url;
+        }
+
+        // Function to stop sound when iframe is loaded
+        function stopSound() {
+            // Example: stop the sound if there's a video/audio within the iframe.
+            const iframe = document.getElementById('web-frame');
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            const iframeAudio = iframeDocument.querySelector('audio');
+            if (iframeAudio) iframeAudio.pause();
+        }
+    </script>
+    <footer class="fixed-footer">
+        Liên hệ: Hoàng Văn khánh - Nguyễn Mai Loan - Vương Đình Bảo - Nguyễn Thị Trang<br>
+        <a href="https://www.facebook.com/mloann.987/" >Facebook: Nguyễn Mai Loan
+    </footer>
+
+</body>
+</html>
